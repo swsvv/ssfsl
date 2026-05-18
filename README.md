@@ -97,7 +97,7 @@ ssfsl/
 
 ## Configuration
 
-Each method has a YAML config in `config/`. The config system uses [expedantic](https://github.com/rnilva/expedantic) for typed config parsing with CLI overrides.
+Each method has a YAML config in `config/`. The config system uses [expedantic](https://github.com/rnilva/expedantic) for typed config parsing and logging with CLI overrides.
 
 Key config fields:
 
