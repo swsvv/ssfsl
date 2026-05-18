@@ -1,3 +1,5 @@
+# Original author: rnilva (https://github.com/rnilva)
+
 import logging
 from abc import ABC, abstractmethod
 from collections import defaultdict
