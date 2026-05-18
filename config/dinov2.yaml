@@ -1,0 +1,25 @@
+project: ssfsl
+dataset: miniImageNet
+eval_dataset: miniImageNet
+dataset_path: /path/to/dataset/miniImageNet/Ravi
+save_path: /path/to/ckpt
+save_freq: 10
+num_epoch: 500
+num_workers: 8
+batch_size: 256
+lr: 0.0005
+weight_decay: 0.04
+momentum: 0.9
+encoder: ViTTiny
+proj:
+    proj_size: 192-192-192
+    activate_fn: ReLU
+model:
+    name: DINOv2
+    student_temp: 0.1
+    teacher_center_temp: 0.04
+    momentum: 0.996
+device: ""
+wandb_run_id: ""
+group: "{name}_{encoder}_{dataset}"
+exp_name: "{name}_{encoder}_{dataset}_{current_time}_{seed}_{word}"

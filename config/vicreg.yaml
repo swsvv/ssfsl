@@ -1,0 +1,26 @@
+project: ssfsl
+dataset: miniImageNet
+eval_dataset: miniImageNet
+dataset_path: /path/to/dataset/miniImageNet/Ravi
+save_path: /path/to/ckpt
+save_freq: 10
+num_epoch: 500
+num_workers: 8
+batch_size: 256
+lr: 0.01
+weight_decay: 1e-04
+momentum: 0.9
+encoder: ResNet18
+proj:
+    proj_size: 512-2048-2048-2048
+    activate_fn: ReLU
+model:
+    name: VICReg
+    eps: 0.0001
+    lambd: 25.0
+    mu: 25.0
+    nu: 1.0
+device: ""
+wandb_run_id: ""
+group: "{name}_{encoder}_{dataset}"
+exp_name: "{name}_{encoder}_{dataset}_{current_time}_{seed}_{word}"

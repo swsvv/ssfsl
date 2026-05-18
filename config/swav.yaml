@@ -1,0 +1,31 @@
+project: ssfsl
+dataset: miniImageNet
+eval_dataset: miniImageNet
+dataset_path: /path/to/dataset/miniImageNet/Ravi
+save_path: /path/to/ckpt
+save_freq: 10
+num_epoch: 500
+num_workers: 8
+batch_size: 256
+lr: 0.07
+weight_decay: 1e-04
+momentum: 0.9
+encoder: ResNet18
+proj:
+    proj_size: 512-512-128
+    activate_fn: ReLU
+model:
+    name: SwAV
+    eps: 0.05
+    temperature: 0.2
+    sinkhorn_iter: 3
+    num_prototypes: 2048
+    multicrop: False
+    size_crops: [84, 36]
+    nmb_crops: [2, 6]
+    min_scale_crops: [0.14, 0.05]
+    max_scale_crops: [1., 0.14]
+device: ""
+wandb_run_id: ""
+group: "{name}_{encoder}_{dataset}"
+exp_name: "{name}_{encoder}_{dataset}_{current_time}_{seed}_{word}"
